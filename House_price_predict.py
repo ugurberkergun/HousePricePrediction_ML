@@ -15,7 +15,7 @@
 
 
 ########## GÖREV ##########
-# Elimizdeki veri seti üzerinden minimum hata ile ev fiyatlarını tahmin eden bir makine öğrenmesi projesi gerçekleştirmek.
+
 
 import warnings
 from catboost import CatBoostRegressor
@@ -34,8 +34,7 @@ import numpy as np
 import pandas as pd
 from helpers import *
 
-# warnings.simplefilter(action='ignore', category=FutureWarning)
-# warnings.simplefilter("ignore", category=ConvergenceWarning)
+
 
 pd.set_option('display.max_columns', None)
 pd.set_option('display.float_format', lambda x: '%.5f' % x)
@@ -69,8 +68,7 @@ for col in cat_but_car:  #10'dan fazla sınıfa sahip olan değişkenler
 
 df[num_cols].describe([0.10, 0.30, 0.50, 0.70, 0.80, 0.99]).T
 
-# for col in num_cols:
-#     num_summary(df, col, plot=True) #sayısal değişkenleri görselleştirmek istersek
+
 
 ##################
 # Target Analizi
@@ -168,7 +166,6 @@ missing_values_table(df)
 #########################
 
 # New Feature-1 => LotArea - 1stFlrSF
-#bahçe ya da yeşil alanı ifade eder, arazi büyüklüğünden, evin tabanında kapladığı alan çıkarılır
 df["LotArea"].describe().T
 df[["LotArea", "1stFlrSF"]]
 
